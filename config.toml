@@ -1,0 +1,21 @@
+baseURL = "/"
+DefaultContentLanguage = "fr"
+languageCode = "fr-fr"
+title = "Zitoune-@nticip-WIN32"
+theme = "zitoune"
+
+[taxonomies]
+ tag = "tags"
+ category = "categories"
+ mood = "moods"
+
+[Params]
+	author = "Zitoune-@nticip-WIN32"
+    description = "Custom theme hugo"
+    github = "https://github.com/ZiToUnEAnTiCipWiN32"
+    youtube = "https://www.youtube.com/channel/UCR-SncS-OWe9xBs-MkU_irw"
+    email = "zitouneanonyme@gmail.com"
+    dateFormat = "Mon, Jan 2, 2006"
+
+[Permalinks]
+    posts = "/:year/:month/:title/"

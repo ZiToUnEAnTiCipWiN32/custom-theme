@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div id="content">
+        {{- block "main" . }}
+---------
+
+<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a><h3>
+    <p class="meta">{{ .Date.Format "02/01/2006" }}</p>
+
+{{ .Description }}
+{{ range .Params.Tags }}{{ . }},{{ end }}
+
+  <h1>Mon blog </h1>
+  {{ range .Data.Pages }}
+    <header>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </header>
+    <article>
+      {{ .Summary }}
+    </article>
+  {{ end}}
+
+----------
+        {{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

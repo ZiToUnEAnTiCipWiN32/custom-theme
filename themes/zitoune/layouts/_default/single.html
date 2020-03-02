@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div id="content">
+		     <div style="margin:25px;">
+		          <h1>{{.Title}}</h1>
+		          <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+		          <div style="color:grey; font-size:16px;">{{if .Params.author}}Author: {{.Params.Author}}{{end}}</div>
+		          <div style="font-size:18px;">{{.Content}}</div>
+
+<!-- permet d afficher article precedent/suivant si disponible-->
+{{ if .PrevInSection }}article précédent : <a href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Title }}</a>{{ end }}
+{{ if .NextInSection }}article suivant : <a href="{{ .NextInSection.RelPermalink }}">{{ .NextInSection.Title }}</a>{{ end }}
+
+		     </div>
+        </div>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>
