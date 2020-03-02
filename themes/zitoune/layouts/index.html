@@ -9,7 +9,7 @@
 
 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a><h3>
     <p class="meta">{{ .Date.Format "02/01/2006" }}</p>
-
+{{ .Site.BaseURL}}
 {{ .Description }}
 {{ range .Params.Tags }}{{ . }},{{ end }}
 
